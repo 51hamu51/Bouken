@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f0e0e9c4d6483f46814028fb26db288, type: 3}
+  m_Name: ProductsData
+  m_EditorClassIdentifier: 
+  Products:
+  - ProductID: 0
+    Name: chair
+    Cost: 2
+    Piece: 0
+  - ProductID: 1
+    Name: desk
+    Cost: 3
+    Piece: 0
+  - ProductID: 2
+    Name: house
+    Cost: 5
+    Piece: 0
