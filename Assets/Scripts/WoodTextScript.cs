@@ -18,4 +18,9 @@ public class WoodTextScript : MonoBehaviour
     {
         WoodText.SetText("wood : {0}", WoodNum);
     }
+
+    public void WoodGet()
+    {
+        WoodNum++;
+    }
 }
