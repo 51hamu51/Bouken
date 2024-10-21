@@ -6,49 +6,53 @@ using UnityEngine.UI;
 public class SelectProducts : MonoBehaviour
 {
     [SerializeField]
+    private ProductsData productsData;
+    [SerializeField]
     private TextMeshProUGUI selectProducts;
     [SerializeField]
     private WoodTextScript woodTextScript;
     [SerializeField]
     private TextMeshProUGUI selectProductsPiece;
+    public int[] ProductsPieces;
+    public int ProductsKinds;
     public int SelectedNum;
-    public struct Products
-    {
-        public int ProductID;
-        public string Name;
-        public int Cost;
-        public int Piece;
-    }
-    public static List<Products> products = new List<Products>();
+
 
 
     void Start()
     {
         SelectedNum = 0;
-        Products chair = new Products();
-        chair.ProductID = 0;
-        chair.Name = "chair";
-        chair.Cost = 2;
-        chair.Piece = 0;
 
-        products.Add(chair);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        selectProducts.text = products[SelectedNum].Name;
-        selectProductsPiece.text = products[SelectedNum].Piece.ToString();
+        selectProducts.text = productsData.Products[SelectedNum].Name;
+        selectProductsPiece.text = ProductsPieces[SelectedNum].ToString();
 
     }
     public void BuyProducts()
     {
-        if (woodTextScript.WoodNum >= products[SelectedNum].Cost)
+        if (woodTextScript.WoodNum >= productsData.Products[SelectedNum].Cost)
         {
-            woodTextScript.WoodNum -= products[SelectedNum].Cost;
-            Products tmpData = products[SelectedNum];
-            tmpData.Piece++;
-            products[SelectedNum] = tmpData;
+            woodTextScript.WoodNum -= productsData.Products[SelectedNum].Cost;
+            ProductsPieces[SelectedNum]++;
+        }
+    }
+    public void NextProduct()
+    {
+        SelectedNum++;
+        if (SelectedNum >= ProductsKinds)
+        {
+            SelectedNum = 0;
+        }
+    }
+    public void PreviousProduct()
+    {
+        SelectedNum--;
+        if (SelectedNum <= -1)
+        {
+            SelectedNum = ProductsKinds - 1;
         }
     }
 }
