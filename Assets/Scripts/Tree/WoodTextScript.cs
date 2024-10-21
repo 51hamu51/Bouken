@@ -8,6 +8,8 @@ public class WoodTextScript : MonoBehaviour
     public int WoodNum;
     [SerializeField]
     private TextMeshProUGUI WoodText;
+    [SerializeField]
+    private ButtonDisplayManager buttonDisplayManager;
     void Start()
     {
         WoodNum = 0;
@@ -22,5 +24,10 @@ public class WoodTextScript : MonoBehaviour
     public void WoodGet()
     {
         WoodNum++;
+    }
+    public void WoodDead()
+    {
+
+        buttonDisplayManager.IsWoodNear = false;
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6513308500704593952}
   m_Layer: 0
   m_Name: rpgpp_lt_mat_a
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 1786167246875036675}
   m_Layer: 0
   m_Name: Prim.00000003
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 6313593673191868196}
   m_Layer: 0
   m_Name: Prim.00000000
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -533,9 +533,11 @@ GameObject:
   - component: {fileID: 5603619465923360346}
   - component: {fileID: 7006601391391078185}
   - component: {fileID: 2686236353560559343}
+  - component: {fileID: -8875561360387669904}
+  - component: {fileID: 4374483336052663742}
   m_Layer: 0
   m_Name: Tree_02
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,7 +550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7602470765675381236}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.07, y: 0.0000009536743, z: 3.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -660,6 +662,41 @@ MonoBehaviour:
       isCreate: 1
       viewAdvanced: 0
     modifyNameEnabled: 1
+--- !u!114 &-8875561360387669904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7602470765675381236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435d6557260820942abc760bd7551666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Children:
+  - {fileID: 3900073726419060657}
+  - {fileID: 6922120271656747833}
+  - {fileID: 8530643393615852844}
+  - {fileID: 9045174259172611902}
+  - {fileID: 6136487374040916739}
+  IsNearTree: 0
+--- !u!114 &4374483336052663742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7602470765675381236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c6a8968eb377e4598a53b8184f6948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeGetChild: {fileID: -8875561360387669904}
+  TreeHP: 0
+  TreeMaxHP: 3
+  woodTextScript: {fileID: 0}
 --- !u!1 &8530643393615852844
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +711,7 @@ GameObject:
   - component: {fileID: 3448846552571746248}
   m_Layer: 0
   m_Name: Prim.00000001
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -863,7 +900,7 @@ GameObject:
   - component: {fileID: 6377775361558373002}
   m_Layer: 0
   m_Name: Prim.00000002
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
