@@ -12,7 +12,7 @@ public class WoodTextScript : MonoBehaviour
     private ButtonDisplayManager buttonDisplayManager;
     void Start()
     {
-        WoodNum = 0;
+        // WoodNum = 0;
     }
 
 

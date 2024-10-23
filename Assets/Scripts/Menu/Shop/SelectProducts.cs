@@ -16,13 +16,14 @@ public class SelectProducts : MonoBehaviour
     public int[] ProductsPieces;
     public int ProductsKinds;
     public int SelectedNum;
+    public GameObject[] products;
 
 
 
     void Start()
     {
         SelectedNum = 0;
-
+        ProductsKinds = products.Length;
     }
 
     void Update()
