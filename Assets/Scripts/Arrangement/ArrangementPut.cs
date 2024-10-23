@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ArrangementPut : MonoBehaviour
 {
+    public SelectProducts selectProducts;
     public GameObject ArrangementCamera;
     public Transform ArrangementPoint;
     private GameObject ArrangeObj;
-    [SerializeField]
-    private GameObject _prefab;
+
     void Start()
     {
-
+        Arrangement_Generate();
     }
 
     void Update()
@@ -21,10 +21,27 @@ public class ArrangementPut : MonoBehaviour
 
     public void Arrangement_Generate()
     {
-        ArrangeObj = Instantiate(_prefab, ArrangementPoint.position, Quaternion.identity, ArrangementCamera.transform);
+        Destroy(ArrangeObj);
+        if (selectProducts.ProductsPieces[selectProducts.SelectedNum] > 0)
+        {
+            ArrangeObj = Instantiate(selectProducts.products[selectProducts.SelectedNum], ArrangementPoint.position, Quaternion.identity, ArrangementCamera.transform);
+        }
     }
+
     public void Arrangement_Put()
     {
-        ArrangeObj.transform.parent = null;
+        if (selectProducts.ProductsPieces[selectProducts.SelectedNum] > 0)
+        {
+            selectProducts.ProductsPieces[selectProducts.SelectedNum]--;
+            ArrangeObj.transform.parent = null;
+            ArrangeObj = null;
+            Arrangement_Generate();
+        }
+        else
+        {
+            Debug.Log("You Don't have this object.");
+        }
     }
 }
+
+
