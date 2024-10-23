@@ -6,6 +6,7 @@ public class ArrangementCameraOnOff : MonoBehaviour
 {
     public GameObject MainCamera;
     public GameObject ArrangementCamera;
+    public GameObject ArrangementCanvas;
     void Start()
     {
         ArrangementCameraOff();
@@ -20,6 +21,7 @@ public class ArrangementCameraOnOff : MonoBehaviour
     public void ArrangementCameraOn()
     {
         ArrangementCamera.SetActive(true);
+        ArrangementCanvas.SetActive(true);
         MainCamera.SetActive(false);
 
     }
@@ -27,5 +29,6 @@ public class ArrangementCameraOnOff : MonoBehaviour
     {
         MainCamera.SetActive(true);
         ArrangementCamera.SetActive(false);
+        ArrangementCanvas.SetActive(false);
     }
 }
