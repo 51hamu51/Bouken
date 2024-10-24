@@ -11,12 +11,16 @@ public class ArrangementMove : MonoBehaviour
     public bool IsDown;
     public bool IsRight;
     public bool IsLeft;
+    public bool IsHigh;
+    public bool IsLow;
     void Start()
     {
         IsUp = false;
         IsDown = false;
         IsRight = false;
         IsLeft = false;
+        IsHigh = false;
+        IsLow = false;
     }
 
 
@@ -37,6 +41,14 @@ public class ArrangementMove : MonoBehaviour
         if (IsLeft)
         {
             LeftMove();
+        }
+        if (IsHigh)
+        {
+            HighMove();
+        }
+        if (IsLow)
+        {
+            LowMove();
         }
     }
     public void UpButtonDown()
@@ -71,6 +83,22 @@ public class ArrangementMove : MonoBehaviour
     {
         IsLeft = false;
     }
+    public void HighButtonDown()
+    {
+        IsHigh = true;
+    }
+    public void HighButtonUp()
+    {
+        IsHigh = false;
+    }
+    public void LowButtonDown()
+    {
+        IsLow = true;
+    }
+    public void LowButtonUp()
+    {
+        IsLow = false;
+    }
 
     public void UpMove()
     {
@@ -98,6 +126,20 @@ public class ArrangementMove : MonoBehaviour
         if (ArrangementCamera != null)
         {
             ArrangementCamera.transform.position -= ArrangementCamera.transform.right * Time.deltaTime * MoveSpeed;
+        }
+    }
+    public void HighMove()
+    {
+        if (ArrangementCamera != null)
+        {
+            ArrangementCamera.transform.position -= ArrangementCamera.transform.forward * Time.deltaTime * MoveSpeed;
+        }
+    }
+    public void LowMove()
+    {
+        if (ArrangementCamera != null)
+        {
+            ArrangementCamera.transform.position += ArrangementCamera.transform.forward * Time.deltaTime * MoveSpeed;
         }
     }
 }

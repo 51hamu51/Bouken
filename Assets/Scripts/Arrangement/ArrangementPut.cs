@@ -4,19 +4,32 @@ using UnityEngine;
 
 public class ArrangementPut : MonoBehaviour
 {
+    [SerializeField]
+    private float RotateSpeed;
     public SelectProducts selectProducts;
     public GameObject ArrangementCamera;
     public Transform ArrangementPoint;
     private GameObject ArrangeObj;
+    public bool IsRightRotate;
+    public bool IsLeftRotate;
 
     void Start()
     {
         Arrangement_Generate();
+        IsRightRotate = false;
+        IsLeftRotate = false;
     }
 
     void Update()
     {
-
+        if (IsRightRotate)
+        {
+            ArrangementRotationRight();
+        }
+        if (IsLeftRotate)
+        {
+            ArrangementRotationLeft();
+        }
     }
 
     public void Arrangement_Generate()
@@ -42,6 +55,35 @@ public class ArrangementPut : MonoBehaviour
             Debug.Log("You Don't have this object.");
         }
     }
+    public void RightRotateButtonDown()
+    {
+        IsRightRotate = true;
+    }
+    public void RightRotateButtonUp()
+    {
+        IsRightRotate = false;
+    }
+    public void LeftRotateButtonDown()
+    {
+        IsLeftRotate = true;
+    }
+    public void LeftRotateButtonUp()
+    {
+        IsLeftRotate = false;
+    }
+
+    public void ArrangementRotationRight()
+    {
+        ArrangeObj.transform.Rotate(0, Time.deltaTime * RotateSpeed, 0);
+    }
+
+
+
+    public void ArrangementRotationLeft()
+    {
+        ArrangeObj.transform.Rotate(0, -Time.deltaTime * RotateSpeed, 0);
+    }
 }
+
 
 
